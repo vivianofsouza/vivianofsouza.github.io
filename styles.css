@@ -7,3 +7,15 @@ h1 {
     color: darkslateblue;
     text-align: center;
 }
+
+.assignment {
+    display: flex; 
+    padding: 10px; 
+    background: lavender; 
+    margin: 10px; 
+}
+
+.assignment img {
+    width: 200px; 
+    padding: 10px; 
+}
