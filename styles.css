@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-    columns: #c4675d;;
+    columns: #c4675d;
     text-align: center;
 }
 
@@ -13,6 +13,9 @@ h1 {
     display: flex; 
     background: #90CCF4; 
     margin: 10px; 
+    margin-bottom: 30px; 
+    border-radius: 5px; 
+    box-shadow: 8px 8px rgba(255, 255, 255, 0.781); 
 }
 
 .assignment img {
@@ -20,6 +23,15 @@ h1 {
     width: 250px;
     border: 10px solid  #3597e2; 
     margin-right: 20px; 
+    border-radius: 5px; 
+}
+
+.assignment a {
+    color: #3597e2; 
+}
+
+.assignment a:hover {
+    color:  #c4675d;
 }
 
 a {
