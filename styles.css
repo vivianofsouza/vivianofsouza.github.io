@@ -9,10 +9,16 @@ h1 {
     text-align: center;
 }
 
-.assignment {
+.assignments {
     display: flex; 
+    flex-wrap: wrap; 
+    margin-left: 20px; 
+}
+
+.assignment {
+    width: 30%; 
     background: #90CCF4; 
-    margin: 10px; 
+    margin: 20px; 
     margin-bottom: 30px; 
     border-radius: 5px; 
     box-shadow: 8px 8px rgba(255, 255, 255, 0.781); 
@@ -20,10 +26,20 @@ h1 {
 
 .assignment img {
     height: 250px; 
-    width: 250px;
+    width: 400px;
     border: 10px solid  #3597e2; 
     margin-right: 20px; 
     border-radius: 5px; 
+    display: block; 
+    margin:auto; 
+}
+
+.assignment h2 {
+    margin: 15px; 
+}
+
+.assignment p {
+    margin: 15px; 
 }
 
 .assignment a {
