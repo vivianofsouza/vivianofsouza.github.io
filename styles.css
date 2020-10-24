@@ -16,7 +16,7 @@ h1 {
 }
 
 .assignment {
-    width: 30%; 
+    width: 28%; 
     background: #90CCF4; 
     margin: 20px; 
     margin-bottom: 30px; 
@@ -26,20 +26,19 @@ h1 {
 
 .assignment img {
     height: 250px; 
-    width: 400px;
+    width: 350px;
     border: 10px solid  #3597e2; 
-    margin-right: 20px; 
+    margin: 22px; 
     border-radius: 5px; 
     display: block; 
-    margin:auto; 
 }
 
 .assignment h2 {
-    margin: 15px; 
+    margin: 20px; 
 }
 
 .assignment p {
-    margin: 15px; 
+    margin: 20px; 
 }
 
 .assignment a {
