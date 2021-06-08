@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+    <title>Eurovision 2021 Visualizations</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/eurostyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+
+
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <style>
+        #map_036489b5a4984658afee69fcebe81590 {
+            position: relative;
+            height: 400px;
+
+        }
+
+        .folium-map {
+            position: relative;
+            padding: 20px;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="decoration"></div>
+                <h2><b>VIVIAN D'SOUZA</b></h2>
+            </div>
+            <ul class="list-unstyled components">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contacts">Contacts</a>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="intro">
+        <h1>Eurovision 2021: Data Visualizations</h1>
+
+        <p><b>The Eurovision Song Contest (ESC)</b> is an annual music competition that has been broadcast since 1956.
+            Countries who are members or partners of the European Broadcasting Union are allowed to send a
+            representative and song to compete for the victory.
+            The 2021 edition saw 39 countries present their acts over the course of three shows: two semi-finals and one
+            grand final. The contest was held in Rotterdam, Netherlands, where rock band <b>Måneskin</b> took the victory for
+            Italy with the song <b><a href="https://www.eurovision.de/videos/2021/ESC-2021-Maneskin-aus-Italien-singen-Zitti-e-buoni-im-Finale,italien1212.html">“Zitti e Buoni” (Shut up and Behave)</a></b>.
+            Below is a representation of the results and a rough analysis of them. I mainly worked with modules within
+            the <b><a href="https://matplotlib.org">Matplotlib</a></b> and <b><a href="https://plotly.com/python/">Plotly</a></b> Python packages.
+        </p>
+    </div>
+
+    <div class="card tempo">
+        <h2>Tempo/BPM</h2>
+
+        <p>Coming after a long wave of lockdowns and the cancellation of Eurovision 2020, many countries predicted that
+            the public would be up for a party. The songs chosen for this year’s ESC trended to be up-beat, optimistic,
+            and dance-able. There were far fewer ballads this year than in the past.
+        </p>
+
+        <b>Breakdown of Tempo</b>
+        <p>While many people associate faster tempos with more upbeat, happier music, that is not necessarily true.
+            Austria’s <a href="https://www.youtube.com/watch?v=1sY76L68rfs">Amen</a> had the fastest tempo this year, at 161.5 bpm (beats per minute). Another ballad, Spain’s
+            <a href="https://www.youtube.com/watch?v=qb5FXBwSx44">“Voy a Quedarme”</a> also ranked highly at 152.0 bpm. In contrast, Azerbaijan’s ethno-pop banger <a href="https://www.youtube.com/watch?v=HSiZmR1c7Q4">“Mata Hari”</a> and
+            Finland’s rock anthem <a href="https://www.youtube.com/watch?v=cIvaeu6Oxzc">“Dark Side,”</a> ranked towards the lower end of the spectrum, at 99.38 bpm. The range of
+            tempos this year went from 80.75 (<a href="https://www.youtube.com/watch?v=0EQyG1Yjlgw">Belgium</a>) to 161.5 (Austria), with the median being 123.047 bpm. This
+            figure would be considered allegro (fast), suggesting that ballads opted for a faster song.</p>
+        <img src=./Images/bpm_circle.png id="bpm-circle">
+
+        <b>ESC Participants by BPM (Interactive Map)</b>
+        <p>The map of countries by BPM shows that this trend was not limited to any geographic region, and that as a
+            whole, most countries tended to submit uptempo songs. </p>
+        <div class="folium-map" id="map_036489b5a4984658afee69fcebe81590"></div>
+        <p><i>The chart was produced using Matplotlib’s Pyplot module, while the Choropleth map was produced using
+                <a href="https://pypi.org/project/folium/0.1.5/">Folium</a>. The tempo of the songs was measured using <a href="https://librosa.org/doc/latest/index.html">Librosa</a>, a Python package designed to analyze music.
+            </i></p>
+
+    </div>
+
+    <div class="card voting">
+        <h2>Voting Breakdown</h2>
+        <p>The voting sequence of the contest is one of the most exciting parts of Eurovision. Up until the very end, it
+            can often seem like anyone’s contest to win, and it’s also exciting to see the flops and successes. The
+            voting is also a good source of data and a way to put into numbers the patterns and trends of the year’s
+            contests.
+            <br>
+            <br>
+            In the Grand Final, half the points come from the professional juries of each countries, while the other
+            half come from the televote, viewers voting by phone. Professional juries are made up of 5 industry experts,
+            who rank all the songs (except that of their own country). Only the songs in each jury’s top 10 will receive
+            points.
+            <br>
+            <br>
+            In the televote, anyone living in a participating country is allowed to vote for a song, aside from their
+            own country’s act. When televote scores are counted, only the top 10 most-voted on songs will be given
+            points by that country. Songs placed 10th-8th are given 1-8 points, while 2nd place receives 10 points and
+            1st receives 12 points, the coveted douze points.
+        </p>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <p>
+            <b>12 Points map</b><br>
+            This connection map shows which countries received 12 points (1st place) from the juries. This year’s
+            contest was considered “wide-open,” with multiple countries being seen as contenders for the win. This can
+            be seen on the map, where a wide array of countries received juries’ 12 points.
+            <br>
+            <br>
+            In some cases, the awarding of 12 points can be motivated by politics/cultural ties. This is clear in the
+            case of the Greece-Cyprus voting exchanges. Given the ethnic and cultural ties between the two countries,
+            they almost always award each other 12 points, despite neither country being a contender for the win. A
+            similar case can be seen in North Macedonia’s 12 points to Serbia and Russia’s 12 points to Moldova.
+            <br>
+            <br>
+
+        </p>
+        <div id="95e7cfa1-c683-4e1d-b8b9-96a0f3a4c0c4" class="plotly-graph-div" style="height:700px; width:700px;">
+        </div>
+
+        <p><b>Breakdown of Jury Points</b><br>This treemap shows a breakdown of the jury votes. As can be seen on the
+            left, around a third of the points were distributed among the three jury winners: <a href="https://www.youtube.com/watch?v=-TdBbLVCAzk">Malta</a>, <a href="https://www.youtube.com/watch?v=3kiyXRhIXWU">France,</a> and
+            <a href="https://www.youtube.com/watch?v=bpM6o6UiBIw">Switzerland</a>. The three countries collectively took around a third of the jury points. Compared to these
+            three, the points awarded to the remaining countries dramatically decreased. <a href="https://www.eurovision.de/videos/2021/ESC-2021-Maneskin-aus-Italien-singen-Zitti-e-buoni-im-Finale,italien1212.html">Italy</a> and
+            <a href="https://www.youtube.com/watch?v=ORDK1XQToAY">Iceland</a> were the only two countries to come near the jury voting margin established by Malta, France, and
+            Switzerland. In the top right corner, we see the <a href="https://www.youtube.com/watch?v=BMDGTsa_Qq0">United Kingdom,</a> which received 0 points. </p>
+        <img src=./Images/jury_chart.png>
+
+        <p><b>Breakdown of Tele Points</b><br>This treemap shows a breakdown of the televotes. Here, around a third of
+            the points were distributed among Italy, <a href="https://www.youtube.com/watch?v=U7-dxzp6Jvs">Ukraine,</a> and France. The two closest competitors to those three
+            were Finland and Iceland. It should be noted that Iceland and France retain their positionings from the jury
+            vote. In the top right corner, we can see the UK, <a href="https://www.youtube.com/watch?v=p4Fag4yajxk">the Netherlands,</a> Spain, and <a href="https://www.youtube.com/watch?v=ydgxZnHFLi4">Germany,</a> all of whom received
+            0 points from the televote.
+        </p>
+        <img src=./Images/tele_chart.png>
+        <p>
+            These charts really illustrate how skewed the voting was towards the favorites. This left average or
+            overlooked entries like the (such as the UK), with little to no points in either category. Songs placing
+            mid-table also received smaller scores compared to the favorites. Among the favorites, voting patterns
+            showed how open the year was. Neither the juries nor televoters could completely agree on one winner.
+        </p>
+        <i>The map was made using Matplotlibs’ Pyplot interactive map module. The treemaps were created using Squarify.</i>
+    </div>
+
+    <div class="card comparison">
+        <h2>Juries vs Televote</h2>
+        <p>For a song to win Eurovision, it should rank highly with both the televote and jury. Furthermore, most
+            Eurovision winners place both Top 3 in the jury and televote, which has occurred for the last four contests.
+            ESC 2021 was the year of the televote. In the case of Italy, the song placed 4th with the jury and 1st with
+            televoting, owing its 25-point margin of victory to the televote. Had the televote been any less, France,
+            the which placed Top 3 in both categories, would have won.
+        </p>
+        <b>Jury vs. Televote</b>
+        <img src=./Images/tele_jury_comparison.png width=90% height=100%>
+        <p>The televote also played a large role in the success of other songs. As seen in the graph below, Ukraine and
+            Finland also benefited greatly from the televote. One explanation for the songs’ poor performance in the
+            jury vote is their genre: Ukraine sent a techno-folk trance tune, while Finland opted for Linkin Park-esque
+            rock. Similarly, Italy sent a glam rock song that won the televote. Eurovision juries tend to favor songs
+            with potential radio and commercial success, playing it safe when awarding points.
+            <br>
+            <br>
+            On the other hand, televoters vote for what stands out and seek novelty or emotional connection with songs.
+            Several factors, such as language choice (Ukrainian and Italian), genre choice (rock, techno, folk), and
+            performance (all had show-stopping stage setups), set these three songs apart from the rest. These songs
+            were vastly different from anything else in the contest and came across as authentic to the public.
+            <br>
+            <br>
+            In the middle, we see songs on which both juries and televoters agreed on. This category includes both the
+            successful France (2nd place) and unlucky United Kingdom (last place).
+            <br>
+            <br>
+            Towards the bottom, we see Switzerland, Bulgaria, and Malta. Switzerland performed a dramatic
+            French-language ballad, <a href="https://www.youtube.com/watch?v=bpM6o6UiBIw">“Tout L’Univers.”</a> Bulgaria competed with a Billie Eilish-inspired act, <a href="https://www.youtube.com/watch?v=qMNxCzuEdVM">“Growing up
+            is Getting Old.”</a> Malta sent a female empowerment anthem in <a href="https://www.youtube.com/watch?v=-TdBbLVCAzk">“Je Me Casse.”</a> All of these songs held radio
+            potential and featured strong vocals, things juries are expected to reward. However, they were overlooked by
+            televoters, especially in the case of Malta (47 pts versus 208 pts). Perhaps these songs did not stand out
+            enough or they were too “polished” for televoters to connect with. Other factors include the running order
+            and stage performance.
+        </p>
+        <i>This chart was made using Matplotlib.</i>
+
+    </div>
+
+    <div class="card order">
+        <h2>Running Order</h2>
+        <p>When it comes to the televote, running order is a factor in what reaches the public. Unlike juries,
+            televoters are not obligated to watch all songs and will most likely not be taking notes while watching.
+            Televotes think on what is memorable as they cast their votes. The running order aids in this, as a song can
+            be more memorable or forgettable based on when it performs.
+            Generally, a song placed around the 11-13 positions (right before the end of the first half) and the 23-25
+            (right before the end of the second half), are expected to do well.</p>
+        <b>Running Order vs. Televote Performance</b>
+        <img src=./Images/run_tele_comparison.png width=90% height=100%>
+        <p> Generally, a song placed around the 11-13th positions (right before the end of the first half) and the 23-25
+            (right before the end of the second half), are expected to do well. This can be seen in Switzerland (11th)
+            and Iceland (12th). Other memorable positions include 1st and last performance, although these do not
+            guarantee success, see <a href="https://www.youtube.com/watch?v=mk4amZlPa4g">Cyprus (1st)</a> and <a href="https://www.youtube.com/watch?v=eRAN7AzEKak">San Marino (26th).</a>
+            <br>
+            <br>
+            What surrounds a song can make or break its success. A good example is Italy (24th), which buried is closest
+            competitors in the televote: San Marino (26th), <a href="https://www.youtube.com/watch?v=5P1ueI9j6gk">Sweden (25th),</a> Netherlands (23rd), and <a href="https://www.youtube.com/watch?v=bp2kfhuv8ZU">Norway (22nd).</a> A
+            similar example is Finland (16th), who was the only song from the 13th-17th positions to break 100
+            televotes. Both of these songs were loud rock entries, which definitely stood out in the recap played to the
+            viewers before and during voting.
+            <br>
+            <br>
+            It is also interesting to note that there is quite a gap between the top 7 televote scorers and the rest of
+            the pack, at around the 150 line. As it was with the jury vote, only a handful of songs attracted the
+            majority of the total votes.
+        </p>
+        <i>This chart was made using Matplotlib.</i>
+
+    </div>
+
+    <div class="card moldova">
+        <h2>Moldovan Televote Controversy</h2>
+        <p>Lastly, we take a look at a potential case of voting manipulation. Moldova’s Natalie Gordienko sung <a href="https://www.youtube.com/watch?v=1zvnsvxA3to">“Sugar”</a>
+            for the Eastern European country. The song was written by Philip Kirkorov, who was heavily involved in the
+            Moldovan delegation’s promotion and production.
+            <br>
+            <br>
+            Kirkorov is widely known in his home country of Russia and other Slavic countries. He is also considered a
+            very contentious figure in the Eurovision community. Closely associated with the Russian music industry and
+            Putin, Kirkorov’s involvement in Eurovision has been heavily scrutinized.
+        </p>
+        <b>Semi-Final vs. Grand Final votes for Moldova</b>
+        <img src=./Images/moldova_votes.png width=90% height=100%>
+        <p> This year, large differences between semi-final votes and grand final votes for Moldova rose questions on
+            whether the Moldovan team had manipulated votes. As seen in the top half of the graph, several countries
+            gave Moldova the most possible points in the semi, but 0 in the final. This meant that the Moldovan entry
+            placed 1st in the televote in the semi-final, but placed 11th or further in the final.
+            <br>
+            <br>
+            One could explain that with the presence of other songs, Moldova’s televote ranking sunk. However, it is
+            sketchy that these countries would completely disregard the song after resonating with it in the semi-final.
+            How could a televote be rigged? A precedent can be found from Eurovision 2013, where it was alleged that
+            Azerbaijan bribed voters in several countries to vote for the Azerbaijani entry. The allegations included
+            providing voters with SIM cards, so they could vote multiple times.
+            <br>
+            <br>
+            The 2021 controversy was not investigated, leaving a rather erratic voting record to stand.
+        </p>
+        <i>This chart was made using Matplotlib.</i>
+    </div>
+
+    <div class="t">
+        <p> <br></p>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="js/bpmmap.js"></script>
+<script type="text/javascript" src="js/12points.js"></script>
+
+
+</html>
