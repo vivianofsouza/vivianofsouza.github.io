@@ -1,0 +1,68 @@
+html, body {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    left: 12%;
+    margin-bottom: 10%;
+}
+
+h1 {
+    color:black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #8296F4;
+}
+
+.intro p {
+    width: 110%;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 10px 10px 30px 0px;
+}
+
+.card {
+    width: 110%;
+    margin-bottom: 10%;
+    /*margin-top: 5%;
+    margin-bottom: 5%;*/
+}
+
+.plotly-graph-div {
+    position: relative;
+    left: 6%;
+}
+
+img {
+    position: relative;
+    left: 6%;
+}
+
+.voting img {
+    position: relative;
+    left: 0%;
+}
+
+#bpm-circle {
+    position: relative;
+    width: 45%;
+    height: 45%;
+    left: 25%;
+    padding-bottom: 5%;
+}
+
+.card p {
+    position: relative;
+    padding-top: 1%;
+}
+
+
+
+
