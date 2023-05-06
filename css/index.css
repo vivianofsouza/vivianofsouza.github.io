@@ -1,0 +1,75 @@
+.container {
+  border: 12px green;
+}
+
+.container-mg {
+  border: 12px red;
+}
+
+.title {
+  font-family: 'Italiana', serif;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.title h1 {
+  font-size: 100px;
+  color: black;
+}
+
+.intro {
+  padding-left: 3%;
+}
+
+.profile-pic {
+  padding-top: 1%;
+}
+
+.hr-nav {
+  padding-top: 2%;
+}
+
+.padding {
+  padding: 2%;
+}
+
+h2 {
+  font-family: 'Italiana', serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: white; 
+}
+
+a:hover {
+  color:black;
+}
+
+h6 a {
+  text-decoration: none;
+  color: black; 
+  font-weight: 800;
+  font-size: 25px;
+}
+
+
+.pg-section {
+  font-family: 'Italiana', serif;
+  color: black;
+  padding: 1%;
+  width: 100%;
+}
+
+.card {
+  margin-top: 1%;
+  margin-bottom: 5%;
+  padding: 2%;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(25, 46, 138, 0.2);
+}

@@ -1,0 +1,127 @@
+.container {
+    border: 12px green;
+  }
+  
+  .container-mg {
+    border: 12px red;
+  }
+  
+  .title {
+    font-family: 'Italiana', serif;
+    padding-top: 5%;
+  }
+  
+  .title h1 {
+    font-size: 50px;
+    color: black;
+  }
+  
+  .nav {
+    padding-top: 6%;
+  }
+  
+  h2 {
+    padding-top: 1%;
+    font-family: 'Italiana', serif;
+  }
+  
+  p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 40px;
+  }
+  
+  .card {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 1%;
+  }
+
+  .job {
+    margin-left: 1%;
+  }
+
+  .courses h6 {
+    padding: 1%;
+  }
+
+  .projects  p {
+    padding-left: 1%;
+  }
+  
+  button {
+    margin: 1%;
+    width: 110px;
+    border-radius: 0.5 !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  .job h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  h6 a {
+    text-decoration: none;
+    color: black; 
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  .job h6 a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: black; 
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .pg-section {
+    font-family: 'Italiana', serif;
+    color: black;
+    padding: 1%;
+  }
+
+  h5 {
+    display: inline;
+    font-family: 'Italiana', serif;
+    color: black; 
+    font-weight: 800;
+    font-size: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  h5 a {
+    display: inline;
+  }
+
+  h4 {
+    margin-left: 1%;
+    font-family: 'Italiana', serif;
+    color: black; 
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  .contacts h4 {
+    margin-bottom: 3%;
+  }
+
+  ul {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  i {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+  }
